@@ -32,6 +32,8 @@ PYGATE_ENABLED ?= 0
 # COAP is enabled by default
 MOD_COAP_ENABLED ?= 1
 
+
+
 # LORA is enabled by default for supported boards
 ifeq ($(BOARD), $(filter $(BOARD), LOPY LOPY4 FIPY TBEAMv1))
 MOD_LORA_ENABLED ?= 1
@@ -153,6 +155,9 @@ endif
 endif
 endif
 
+
+
+
 LDFLAGS = -nostdlib -Wl,-Map=$(@:.elf=.map) -Wl,--no-check-sections -u call_user_start_cpu0
 LDFLAGS += -Wl,-static -Wl,--undefined=uxTopUsedPriority -Wl,--gc-sections
 
@@ -183,6 +188,9 @@ ifeq ($(DIFF_UPDATE_ENABLED), 1)
     CFLAGS += -DDIFF_UPDATE_ENABLED -DBZ_NO_STDIO
 endif
 
+$(info ULab Module to be installed)
+CFLAGS += -DUSER_C_MODULES=ulab
+USER_C_MODULES = ulab
 ifeq ($(MOD_SIGFOX_ENABLED), 1)
     $(info SIGFOX Module Enabled)
     CFLAGS += -DMOD_SIGFOX_ENABLED
