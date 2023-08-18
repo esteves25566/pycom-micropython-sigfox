@@ -295,3 +295,8 @@ Because the encryption is done based on the physical flash address, there are 2 
 - gpy.bin_enc_0x1A0000 which has to be written at the ota_0 partition address (0x1A0000)
 
 *__Hint:__ on micropython interface, the method `pycom.ota_slot()` responds with the address of the next OTA partition available (either 0x10000 or 0x1A0000).*
+
+### ULab
+
+This release contains a ulab implementation by https://github.com/v923z/micropython-ulab. As this implementation can be too big to fit on a PYCOM or TTGO board, before the build process, it's possible to change the requirements of the build in the file esp32/ulab/code/ulab.h
+Check the micropython-ulab repository for more info.

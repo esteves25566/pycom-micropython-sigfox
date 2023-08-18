@@ -880,6 +880,36 @@ typedef struct _mp_obj_slice_t {
 void mp_obj_slice_indices(mp_obj_t self_in, mp_int_t length, mp_bound_slice_t *result);
 
 
+#ifndef MP_ROM_NONE
+#if MICROPY_OBJ_IMMEDIATE_OBJS
+#define MP_ROM_NONE mp_const_none
+#else
+#define MP_ROM_NONE MP_ROM_PTR(&mp_const_none_obj)
+#endif
+#endif
+
+#ifndef MP_ROM_FALSE
+#if MICROPY_OBJ_IMMEDIATE_OBJS
+#define MP_ROM_FALSE mp_const_false
+#define MP_ROM_TRUE mp_const_true
+#else
+#define MP_ROM_FALSE MP_ROM_PTR(&mp_const_false_obj)
+#define MP_ROM_TRUE MP_ROM_PTR(&mp_const_true_obj)
+#endif
+#endif
+
+#ifndef MP_ROM_INT
+typedef mp_const_obj_t mp_rom_obj_t;
+#define MP_ROM_INT(i) MP_OBJ_NEW_SMALL_INT(i)
+#define MP_ROM_QSTR(q) MP_OBJ_NEW_QSTR(q)
+#define MP_ROM_PTR(p) (p)
+/* for testing
+typedef struct _mp_rom_obj_t { mp_const_obj_t o; } mp_rom_obj_t;
+#define MP_ROM_INT(i) {MP_OBJ_NEW_SMALL_INT(i)}
+#define MP_ROM_QSTR(q) {MP_OBJ_NEW_QSTR(q)}
+#define MP_ROM_PTR(p) {.o = p}
+*/
+#endif
 
 void mp_seq_multiply(const void *items, size_t item_sz, size_t len, size_t times, void *dest);
 #if MICROPY_PY_BUILTINS_SLICE
