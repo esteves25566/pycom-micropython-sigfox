@@ -1642,6 +1642,7 @@ def main():
             print_exc(e)
         else:
             eprint('Exception: {}'.format(e))
+            #raise e
         try:
             nPy.exit_pycom_programming_mode()
         except Exception as e:
