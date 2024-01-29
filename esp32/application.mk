@@ -113,6 +113,7 @@ APP_MAIN_SRC_C = \
 	fatfs_port.c \
 	pycom_config.c \
 	mpthreadport.c \
+	xmc_lock_sr.c \
 
 APP_HAL_SRC_C = $(addprefix hal/,\
 	esp32_mphal.c \
