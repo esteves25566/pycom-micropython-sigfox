@@ -53,7 +53,7 @@
 #include "esp32chipinfo.h"
 #include "esp_event_loop.h"
 #include "app_sys_evt.h"
-
+#include "xmc_lock_sr.h"
 
 TaskHandle_t mpTaskHandle;
 TaskHandle_t svTaskHandle;
@@ -129,6 +129,7 @@ static esp_err_t app_sys_event_handler(void *ctx, system_event_t *event)
 *******************************************************************************/
 void app_main(void) {
 
+    xmc_check_lock_sr(false);
     esp32_init_chip_info();
 
     // remove all the logs from the IDF
