@@ -16,7 +16,7 @@
 #include "esp_rom_spiflash.h"
 
 #elif CONFIG_IDF_TARGET_ESP32
-#include "esp32/rom/spi_flash.h"
+#include "spi_flash.h"
 
 #elif CONFIG_IDF_TARGET_ESP32S2
 #include "esp32s2/rom/spi_flash.h"
