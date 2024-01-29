@@ -83,6 +83,7 @@ APP_INC += -I$(ESP_IDF_COMP_PATH)/bt/bluedroid/hci/include
 APP_INC += -I$(ESP_IDF_COMP_PATH)/bt/bluedroid/gki/include
 APP_INC += -I$(ESP_IDF_COMP_PATH)/bt/bluedroid/api/include
 APP_INC += -I$(ESP_IDF_COMP_PATH)/bt/bluedroid/btc/include
+APP_INC += -I$(ESP_IDF_COMP_PATH)/esp_common
 
 ifeq ($(MOD_COAP_ENABLED), 1)
 APP_INC += -I$(ESP_IDF_COMP_PATH)/coap/libcoap/include/coap
