@@ -188,14 +188,14 @@ ifeq ($(DIFF_UPDATE_ENABLED), 1)
     CFLAGS += -DDIFF_UPDATE_ENABLED -DBZ_NO_STDIO
 endif
 
-#$(info ULab Module to be installed)
-#CFLAGS += -DUSER_C_MODULES=ulab
-#USER_C_MODULES = ulab
+$(info ULab Module to be installed)
+CFLAGS += -DUSER_C_MODULES=ulab
+USER_C_MODULES = ulab
 
 
-$(info UMiniz Module to be installed)
-CFLAGS += -DUSER_C_MODULES=uminiz/miniz
-USER_C_MODULES = uminiz/miniz
+#$(info UMiniz Module to be installed)
+#CFLAGS += -DUSER_C_MODULES=uminiz/miniz
+#USER_C_MODULES = uminiz/miniz
 
 
 
