@@ -18,6 +18,6 @@
 [submodule "lib/nrfx"]
 	path = lib/nrfx
 	url = https://github.com/NordicSemiconductor/nrfx.git
-[submodule "miniz"]
+[submodule "esp32/miniz"]
 	path = miniz
 	url = https://github.com/richgel999/miniz.git
