@@ -191,6 +191,14 @@ endif
 $(info ULab Module to be installed)
 CFLAGS += -DUSER_C_MODULES=ulab
 USER_C_MODULES = ulab
+
+
+$(info UMiniz Module to be installed)
+CFLAGS += -DUSER_C_MODULES=uminiz
+USER_C_MODULES = uminiz
+
+
+
 ifeq ($(MOD_SIGFOX_ENABLED), 1)
     $(info SIGFOX Module Enabled)
     CFLAGS += -DMOD_SIGFOX_ENABLED
