@@ -195,7 +195,7 @@ endif
 
 $(info UMiniz Module to be installed)
 CFLAGS += -DUSER_C_MODULES=uminiz
-#USER_C_MODULES = uminiz
+USER_C_MODULES = uminiz
 
 
 
