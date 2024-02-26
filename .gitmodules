@@ -19,5 +19,5 @@
 	path = lib/nrfx
 	url = https://github.com/NordicSemiconductor/nrfx.git
 [submodule "esp32/miniz"]
-	path = miniz
+	path = esp32/miniz
 	url = https://github.com/richgel999/miniz.git
